@@ -1,0 +1,32 @@
+https://console.firebase.google.com/project/meetup-55963/authentication/users
+
+
+import { AngularFireModule } from 'angularfire2';
+
+
+Set up the firebase configuration 
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyBdZXlS2TziH91ZyJtVBsPnbeyy7ensi48",
+    authDomain: "meetup-55963.firebaseapp.com",
+    databaseURL: "https://meetup-55963.firebaseio.com",
+    storageBucket: "meetup-55963.appspot.com",
+    messagingSenderId: "891530859732"
+};  
+
+
+Include these two modules from angularfire2
+AuthProviders, AuthMethods 
+
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+};
+
+
+imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig)
+  ],
+

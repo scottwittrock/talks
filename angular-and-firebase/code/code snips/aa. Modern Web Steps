@@ -1,0 +1,29 @@
+1. Install the correct dependancies.
+    a. Firebase - 
+        a. npm install firebase --save
+    b. AngularFire2 - https://github.com/angular/angularfire2
+        a. npm install angularfire2 --save
+2. Initiate the Firebase App
+    a. Add the libraries to the app.module.ts
+    b. Set up firebase configurations
+    c. Set up Authentication configurations
+        a. Configure to utlize username/password
+    d. Initiate the firebase App 
+3. Deal with Authentication
+    a. Import angularfire
+    b. Add to constructor
+    c. Allow a user to create a new account 
+    d. Allow a user to login
+    e. Check for user in navigation
+        a. Add librar
+        b. constructor
+        c. Subscribe to Authentication
+        d. Add signout method
+4. Add a new Meetup
+    a. Add library
+    b. Constuct
+    c. Add code to add Meetup
+5. Subscribe to the list of Events
+    a. Add library
+    b. constructor
+    c. Subscribe to list of Events

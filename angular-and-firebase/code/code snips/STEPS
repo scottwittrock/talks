@@ -1,0 +1,47 @@
+1. Configure angularfire setting and auth module in app.module
+    a. npm install firebase --save
+    b. npm install angularfire2 --save
+2. Set up and configure Login Page
+    a. Create login and createAccount functions on component.ts
+    b. Create email and password variables
+    c. Inject angularfire
+    d. Login Function 
+        1. Log user in
+        2. Redirect to window.location.href="/"
+    e. Create User Function 
+        1. Create user via auth
+        2. Create new user object with update
+        3. Subscribe to user and log it out
+        4. Redirect to "/"
+3. Update the Navigation bar
+    a. Subscribe to the user in the component
+    b. Toggle "Add" task tab based on user 
+    c. Add "Logout" button and toggle via "user" 
+4. Enable Create Meetup Page   
+    a. Define meetup properties
+        1. title
+        2. date 
+        3. description
+        4. url
+    b. Link properties to input properties in html
+        1. remember to also define the name
+        2. Add (ngSubmit)="submitEvent()" to the form
+    c. Define the "submitEvent()" function 
+        1. Create meetup object 
+        2. Push new meetup to events list
+        3. redirect to window.location.href = "/"
+5. Subscibe to events in Event list
+    a. set events variables
+    b. in nginit subscibe to events list af.database.list("events")
+    c. Set listOfEvents to events
+    d. Loop through events in event list 
+        a. Add a div and loop through events 
+        b. <div *ngFor="let meetup of events">
+        c. Pass the meetup into the component. 
+7. Set up the card 
+    a. Import the input property 
+    b. Set Input() meetup
+    c. Replace text in card with {{meetup.title}}
+    d. replace url with [url]="meetup.url"
+
+    

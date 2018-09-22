@@ -1,0 +1,17 @@
+for app.module.ts
+
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'list', component: EventlistComponent },
+  { path: 'add', component: AddeventComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: EventlistComponent },
+];
+
+
+Add to imports
+RouterModule.forRoot(appRoutes)
+
+
+<router-outlet></router-outlet>
