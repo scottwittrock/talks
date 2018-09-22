@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let task of tasks | async"> 
+    <h1>{{task.name}}</h1>
+    <p>{{task.project}}</p>
+  </div>
+</ion-content>
+
+
+
+
+
