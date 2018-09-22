@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Add New Event</h1>
+  <form (ngSubmit)="submitEvent()">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Event Title</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Event Title" name="title" [(ngModel)]="title" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Event Date</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Event Date" name="date" [(ngModel)]="date" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Event Description</label>
+      <textarea type="text" class="form-control" rows="7" id="formGroupExampleInput2" placeholder="Event Description..." name="description" [(ngModel)]="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Image URL</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" name="url" [(ngModel)]="url" required>
+    </div>
+    <button class="btn btn-alert"> Submit Event</button>
+  </form>
+</div>

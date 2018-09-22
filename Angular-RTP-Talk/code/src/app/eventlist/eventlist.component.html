@@ -1,0 +1,8 @@
+<div class="container">
+  <h1> Upcoming Events</h1>
+  <div class="card-columns">
+    <div *ngFor="let meetup of events"> 
+      <app-eventcard [meetup]="meetup"></app-eventcard>
+    </div>
+  </div>
+</div>
