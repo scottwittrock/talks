@@ -10,7 +10,12 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface FancyButton {}
+  interface FancyButton {
+    /**
+    * The text to display on the button
+    */
+    'text': string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -48,7 +53,13 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface FancyButton {}
+  interface FancyButton {
+    'onClicked'?: (event: CustomEvent<any>) => void;
+    /**
+    * The text to display on the button
+    */
+    'text'?: string;
+  }
   interface MyComponent {
     /**
     * The first name

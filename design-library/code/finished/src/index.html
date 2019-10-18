@@ -10,9 +10,13 @@
 
 </head>
 <body>
-
-  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
-    <fancy-button></fancy-button>
+    
+    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+    <fancy-button text="Hello world"></fancy-button>
+    <script>
+        const fancyButton = document.querySelector('fancy-button');
+        fancyButton.addEventListener('clicked', event => { console.log("I was clicked") })
+    </script>
 
 </body>
 </html>

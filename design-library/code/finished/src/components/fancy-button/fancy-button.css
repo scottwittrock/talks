@@ -16,6 +16,16 @@
     overflow: hidden;
     z-index: 1;
 }
+
+.button:focus{
+    outline: none;
+}
+
+.button:active{
+    border: none;
+    background-color: #0cf;
+}
+
 .button:after {
     content: '';
     position: absolute;

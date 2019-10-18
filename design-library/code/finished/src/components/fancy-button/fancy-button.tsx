@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
     tag: 'fancy-button',
@@ -6,13 +6,21 @@ import { Component, Host, h } from '@stencil/core';
     shadow: true
 })
 export class FancyButton {
+    /**
+        The text to display on the button
+    */
+    @Prop()text: string = "click"; 
 
+    @Event()clicked: EventEmitter;
 
+    onButtonClick(){
+        this.clicked.emit();
+    }
 
     render() {
         return (
             <Host>
-                <a href="#" class="button">Hover me</a>
+                <div class="button" onClick={()=>this.onButtonClick()}>{this.text}</div>
             </Host>
         );
     }
