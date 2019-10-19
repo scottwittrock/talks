@@ -24,7 +24,7 @@ Add this to your package.json
 
 # Step 4: 
 Add library to angular application
-* `npm i @scottwittrock/fancybutton`
+* ``
 * Add `schemas: [CUSTOM_ELEMENTS_SCHEMA],` to app.module.ts
 * `import { defineCustomElements } from '@scottwittrock/fancybutton/loader'`;
 
