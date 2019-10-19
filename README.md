@@ -1,6 +1,6 @@
 # Talks
 
-## Design Library 
+## Design Library with Stencil JS
 
 Talk give at: 
 * BarCamp 2019
