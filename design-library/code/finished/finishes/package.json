@@ -10,7 +10,9 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/finished/finished.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": "git://github.com/scottwittrock/talks.git",
   "files": [
     "dist/",
@@ -21,7 +23,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate", 
+    "generate": "stencil generate",
     "publish": "npm run build && npm publish"
   },
   "devDependencies": {
