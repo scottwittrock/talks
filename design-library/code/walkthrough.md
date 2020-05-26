@@ -1,13 +1,13 @@
 # Step 1:
 Initiate Stencil Project and build the initial template.   
-`npm init stencil`
+`npm init stencil` - Call it Stencil library or something
 `npm install`
 `npm run start`
 
 # Step 2:
 Explore the code and go over what's in there.
 
-# Step 3: 
+# Step 3:
 Create super cool fancy button
 
 `npm run generate`
@@ -21,25 +21,72 @@ Add this to your package.json
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": "git://github.com/scottwittrock/talks.git",
 ```
+Add this script 
+```
+    "publish": "npm run build && npm publish"
+```
 
 # Step 4: 
-Add library to angular application
+Create Angular application
+
+[Add library to angular application](https://stenciljs.com/docs/angular)
 * ``
 * Add `schemas: [CUSTOM_ELEMENTS_SCHEMA],` to app.module.ts
 * `import { defineCustomElements } from '@scottwittrock/fancybutton/loader'`;
+* `defineCustomElements();`
+
 
 # Step 5: 
 Add library to react application 
-* `create-react-app react-demo`
+* `npx create-react-app react-demo`
 * `npm i @scottwittrock/fancybutton`
 * In your index.js file add
 * `import { applyPolyfills, defineCustomElements } from '@scottwittrock/fancybutton/loader';`
 
+Create and publish react bindings
+https://stenciljs.com/docs/react
 
+* npm install @stencil/react-output-target --save-dev
+
+``` 
+import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
+
+export const config: Config = {
+  namespace: 'demo',
+  outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'component-library',
+      proxiesFile: '../component-library-react/src/components.ts',
+    }),
+    {
+      type: 'dist',
+    },
+  ],
+};
+```
 
 
 
 # Appendix
+
+Click listener
+```jsx
+  @Event() clicked: EventEmitter;
+  onButtonClick(){
+    this.clicked.emit();
+  }
+```
+Click listener
+```html
+  <script>
+    const fancyButton = document.querySelector('fancy-button');
+    fancyButton.addEventListener('userClicked', event => { 
+      alert("The user clicked the button");
+     });
+  </script>
+```
+
 Fancy button html
 ```html
 <div class="button" onClick={()=>this.onButtonClick()}>{this.text}</div>
@@ -59,6 +106,7 @@ Fancy button css
     position: relative;
     overflow: hidden;
     z-index: 1;
+    cursor: pointer;
 }
 
 .button:focus{
